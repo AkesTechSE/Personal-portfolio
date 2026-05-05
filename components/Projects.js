@@ -88,16 +88,14 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0b1728] shadow-[0_24px_90px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/25 hover:shadow-[0_28px_100px_rgba(0,0,0,0.35)] ${
-                index === 0 ? 'lg:col-span-7' : 'lg:col-span-5'
-              }`}
+              className="group flex min-h-[540px] flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0b1728] shadow-[0_24px_90px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/25 hover:shadow-[0_28px_100px_rgba(0,0,0,0.35)] lg:col-span-4"
             >
               <div className="relative overflow-hidden">
                 {/* Gradient bar */}
                 <div className={`h-1.5 bg-gradient-to-r ${project.gradient}`} />
 
                 {/* Project image */}
-                  <div className={`relative ${index === 0 ? 'h-72 sm:h-80' : 'h-56 sm:h-60'}`}>
+                  <div className="relative h-48 sm:h-52">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -118,9 +116,9 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="flex flex-1 flex-col p-6 sm:p-7">
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
                 <div className="mb-3 flex items-start justify-between gap-4">
-                  <h3 className="text-2xl font-semibold text-slate-100 transition-colors group-hover:text-teal-300">
+                  <h3 className="text-xl font-semibold text-slate-100 transition-colors group-hover:text-teal-300">
                     {project.title}
                   </h3>
                   <svg className="mt-1 h-5 w-5 flex-shrink-0 text-slate-300/40 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,7 +132,7 @@ export default function Projects() {
 
                 <div className="mb-5 flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-slate-300/45">
                   <span className="h-px flex-1 bg-white/10" />
-                  <span>{index === 0 ? 'Featured case study' : 'Selected case study'}</span>
+                  <span>Selected case study</span>
                   <span className="h-px flex-1 bg-white/10" />
                 </div>
 
@@ -153,7 +151,7 @@ export default function Projects() {
 
                 <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/10 pt-5">
                   <span className="text-xs uppercase tracking-[0.3em] text-slate-300/45">
-                    {index === 0 ? 'Featured work' : 'Selected work'}
+                    Selected work
                   </span>
                   <a
                     href={project.link}

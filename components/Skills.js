@@ -33,9 +33,9 @@ export default function Skills() {
         {/* Programming Languages */}
         <div className="mx-auto mb-12 max-w-4xl">
           <h3 className="mb-8 text-center text-lg font-medium uppercase tracking-[0.25em] text-slate-300/60">Programming Languages</h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-5">
             {technicalSkills.map((skill, index) => (
-              <div key={index} className="h-full rounded-2xl border border-white/10 bg-[#0b1728] p-6">
+              <div key={index} className="h-full rounded-2xl border border-white/10 bg-[#0b1728] p-5">
                 <div className="flex justify-between mb-3">
                   <span className="font-medium text-slate-200/85">{skill.name}</span>
                   <span className="text-slate-300/45">{skill.level}%</span>
@@ -54,9 +54,9 @@ export default function Skills() {
         {/* Databases */}
         <div className="mx-auto mb-12 max-w-4xl">
           <h3 className="mb-8 text-center text-lg font-medium uppercase tracking-[0.25em] text-slate-300/60">Databases</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-5">
             {databases.map((db, index) => (
-              <div key={index} className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-[#0b1728] p-6 text-center">
+              <div key={index} className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-[#0b1728] p-5 text-center">
                 <div>
                   <h4 className="mb-3 text-lg font-semibold text-slate-100">{db.name}</h4>
                   <div className="flex justify-center mb-3">
@@ -77,11 +77,11 @@ export default function Skills() {
         {/* Frameworks & Tools */}
         <div className="mx-auto max-w-4xl">
           <h3 className="mb-8 text-center text-lg font-medium uppercase tracking-[0.25em] text-slate-300/60">Frameworks & Tools</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {frameworks.map((framework, index) => (
               <div 
                 key={index}
-                className="group flex h-20 items-center justify-center rounded-xl border border-white/10 bg-[#0b1728] p-4 text-center transition-all duration-300 hover:border-teal-400/25 hover:bg-[#0f1d33]"
+                className="group flex h-16 items-center justify-center rounded-xl border border-white/10 bg-[#0b1728] p-3 text-center transition-all duration-300 hover:border-teal-400/25 hover:bg-[#0f1d33]"
               >
                 <div className="text-sm font-medium text-slate-300/70 transition-colors group-hover:text-slate-100">
                   {framework}

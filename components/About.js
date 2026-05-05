@@ -34,8 +34,8 @@ export default function About() {
           <h2 className="section-heading mt-4">Built with care, shipped with clarity.</h2>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.22)] backdrop-blur-sm sm:p-10">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+          <div className="h-full rounded-3xl border border-white/10 bg-white/5 p-7 shadow-[0_20px_80px_rgba(0,0,0,0.22)] backdrop-blur-sm sm:p-8">
             <h3 className="text-2xl font-semibold text-slate-100">My Journey</h3>
             <div className="mt-6 space-y-5 text-slate-300/75 leading-8">
               <p>
@@ -49,30 +49,30 @@ export default function About() {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-teal-400/15 bg-teal-400/5 p-4 text-center">
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-teal-400/15 bg-teal-400/5 p-3 text-center">
                 <div className="font-mono text-2xl text-teal-300">6+</div>
                 <div className="mt-1 text-sm text-slate-300/70">Projects</div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/4 p-4 text-center">
+              <div className="rounded-2xl border border-white/10 bg-white/4 p-3 text-center">
                 <div className="font-mono text-2xl text-slate-100">10+</div>
                 <div className="mt-1 text-sm text-slate-300/70">Technologies</div>
               </div>
-              <div className="rounded-2xl border border-teal-400/15 bg-teal-400/5 p-4 text-center">
+              <div className="rounded-2xl border border-teal-400/15 bg-teal-400/5 p-3 text-center">
                 <div className="font-mono text-2xl text-teal-300">Full</div>
                 <div className="mt-1 text-sm text-slate-300/70">Stack</div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:auto-rows-fr">
             {expertiseAreas.map((area, index) => (
               <div 
                 key={index} 
-                className="group h-full rounded-2xl border border-white/10 bg-[#0b1728] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:bg-[#0f1d33]"
+                className="group flex h-full flex-col rounded-2xl border border-white/10 bg-[#0b1728] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:bg-[#0f1d33]"
               >
                 <div className="flex h-full flex-col">
-                  <div className="mb-4 flex items-center space-x-4">
+                  <div className="mb-3 flex min-h-[60px] items-start space-x-3">
                     <div className="flex-shrink-0 text-3xl transition-transform duration-300 group-hover:scale-110">
                       {area.icon}
                     </div>
