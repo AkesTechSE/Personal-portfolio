@@ -88,7 +88,7 @@ export default function Contact() {
       <div className="section-shell">
         <div className="mb-14 text-center">
           <p className="section-label">04. Contact</p>
-          <h2 className="section-heading mt-4">Let’s build something useful together.</h2>
+          <h4 className="section-heading mt-4">Let’s build something useful together.</h4>
         </div>
         
         <div className="mx-auto max-w-6xl">
@@ -106,9 +106,9 @@ export default function Contact() {
                   <a
                     key={index}
                     href={method.link}
-                    className="group flex items-center space-x-4 rounded-2xl border border-white/10 bg-[#0b1728] p-4 transition-all duration-300 hover:border-teal-400/25 hover:bg-[#0f1d33]"
+                    className="group flex items-center space-x-4 rounded-2xl border border-white/10 bg-[#0b1728] p-4 transition-all duration-300 hover:border-sky-400/25 hover:bg-[#0f1d33]"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-teal-400/25 bg-teal-400/10 text-teal-200 transition-transform duration-300 group-hover:scale-110">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-sky-400/25 bg-sky-400/10 text-sky-200 transition-transform duration-300 group-hover:scale-110">
                       {method.icon}
                     </div>
                     <div>
@@ -120,8 +120,8 @@ export default function Contact() {
               </div>
 
               {/* Quick Response Note */}
-              <div className="mt-8 rounded-2xl border border-teal-400/20 bg-teal-400/8 p-4">
-                <p className="text-sm text-teal-100/85">
+              <div className="mt-8 rounded-2xl border border-sky-400/20 bg-sky-400/8 p-4">
+                <p className="text-sm text-sky-100/85">
                   <strong>Quick Response:</strong> I typically reply within 24 hours. For urgent matters, 
                   feel free to call or text me directly.
                 </p>
@@ -143,7 +143,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-lg border border-white/10 bg-[#07111f] px-4 py-3 text-slate-100 outline-none transition-colors duration-300 placeholder:text-slate-500 focus:border-teal-400/50"
+                      className="w-full rounded-lg border border-white/10 bg-[#07111f] px-4 py-3 text-slate-100 outline-none transition-colors duration-300 placeholder:text-slate-500 focus:border-sky-400/50"
                       placeholder="Your full name"
                     />
                   </div>
@@ -158,7 +158,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-lg border border-white/10 bg-[#07111f] px-4 py-3 text-slate-100 outline-none transition-colors duration-300 placeholder:text-slate-500 focus:border-teal-400/50"
+                      className="w-full rounded-lg border border-white/10 bg-[#07111f] px-4 py-3 text-slate-100 outline-none transition-colors duration-300 placeholder:text-slate-500 focus:border-sky-400/50"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -175,7 +175,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg border border-white/10 bg-[#07111f] px-4 py-3 text-slate-100 outline-none transition-colors duration-300 placeholder:text-slate-500 focus:border-teal-400/50"
+                    className="w-full rounded-lg border border-white/10 bg-[#07111f] px-4 py-3 text-slate-100 outline-none transition-colors duration-300 placeholder:text-slate-500 focus:border-sky-400/50"
                     placeholder="What is this regarding?"
                   />
                 </div>
@@ -191,7 +191,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows="6"
-                    className="w-full resize-none rounded-lg border border-white/10 bg-[#07111f] px-4 py-3 text-slate-100 outline-none transition-colors duration-300 placeholder:text-slate-500 focus:border-teal-400/50"
+                    className="w-full resize-none rounded-lg border border-white/10 bg-[#07111f] px-4 py-3 text-slate-100 outline-none transition-colors duration-300 placeholder:text-slate-500 focus:border-sky-400/50"
                     placeholder="Tell me about your project or inquiry..."
                   ></textarea>
                 </div>
@@ -203,7 +203,7 @@ export default function Contact() {
                   className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 ${
                     isSubmitting
                       ? 'cursor-not-allowed bg-white/10 text-slate-500'
-                      : 'border border-teal-400/60 bg-transparent text-teal-200 hover:border-teal-300 hover:bg-teal-400/10'
+                      : 'border border-sky-400/60 bg-transparent text-sky-200 hover:border-sky-300 hover:bg-sky-400/10'
                   }`}
                 >
                   {isSubmitting ? (

@@ -41,7 +41,7 @@ export default function Navigation() {
           href="#home"
           className="flex items-center gap-3 text-sm font-semibold tracking-[0.25em] text-slate-100"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-teal-400/70 text-teal-300 shadow-[0_0_0_1px_rgba(45,212,191,0.12)]">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-sky-400/70 text-sky-300 shadow-[0_0_0_1px_rgba(56,189,248,0.12)]">
             A
           </span>
           <span className="hidden sm:block">AKLILU ABERA</span>
@@ -56,17 +56,17 @@ export default function Navigation() {
                 href={item.href}
                 className={`text-sm tracking-wide transition-colors duration-300 ${
                   activeSection === item.section
-                    ? "text-teal-300"
+                    ? "text-sky-300"
                     : "text-slate-300/70 hover:text-slate-100"
                 }`}
               >
-                <span className="mr-2 font-mono text-teal-300/80">{item.number}.</span>
+                <span className="mr-2 font-mono text-sky-300/80">{item.number}.</span>
                 {item.label}
               </a>
             ))}
             <a
               href="#contact"
-              className="rounded-md border border-teal-400/60 px-4 py-2 text-sm font-medium text-teal-200 transition-colors hover:border-teal-300 hover:bg-teal-400/10"
+              className="rounded-md border border-sky-400/60 px-4 py-2 text-sm font-medium text-sky-200 transition-colors hover:border-sky-300 hover:bg-sky-400/10"
             >
               Resume
             </a>
@@ -109,18 +109,18 @@ export default function Navigation() {
               href={item.href}
               className={`block py-2 text-sm tracking-wide transition-colors duration-300 ${
                 activeSection === item.section
-                  ? "text-teal-300"
+                  ? "text-sky-300"
                   : "text-slate-300/70 hover:text-slate-100"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
-              <span className="mr-2 font-mono text-teal-300/80">{item.number}.</span>
+              <span className="mr-2 font-mono text-sky-300/80">{item.number}.</span>
               {item.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="mt-3 inline-flex rounded-md border border-teal-400/60 px-4 py-2 text-sm font-medium text-teal-200"
+            className="mt-3 inline-flex rounded-md border border-sky-400/60 px-4 py-2 text-sm font-medium text-sky-200"
             onClick={() => setIsMenuOpen(false)}
           >
             Resume

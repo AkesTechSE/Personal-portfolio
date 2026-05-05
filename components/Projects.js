@@ -1,174 +1,161 @@
 "use client";
 
 import Image from "next/image";
+import { useMemo, useState } from "react";
 
 export default function Projects() {
+  const [startIndex, setStartIndex] = useState(0);
+
   const projects = [
     {
       title: "Spam Classifier",
+      date: "Sat, 24 October 2025",
       description:
-        "Machine learning system that accurately identifies and filters spam messages using NLP techniques and Python.",
-      category: "AI/ML",
-      gradient: "from-green-500 to-blue-500",
-      stack: ["Python", "TensorFlow", "NLP", "Scikit-learn", "Pandas"],
+        "Machine learning system that accurately identifies and filters spam messages using NLP techniques.",
+      tools: ["Python", "TensorFlow", "Scikit-learn", "NLP"],
       image: "/projects/spam.jpg",
       link: "https://spam-classifier-cmzr.onrender.com",
     },
     {
       title: "Library Management System",
+      date: "Sat, 20 May 2025",
       description:
         "Comprehensive library management solution with book tracking, user management, and analytics dashboard.",
-      category: "Full Stack",
-      gradient: "from-purple-500 to-pink-500",
-      stack: ["Next.js", "MongoDB", "Express"],
+      tools: ["Next.js", "MongoDB", "Express"],
       image: "/projects/library.jpg",
       link: "https://yourwebsite.com/library-system",
     },
     {
       title: "Audio Streaming Site",
+      date: "Fri, 14 November 2025",
       description:
-        "Modern audio streaming platform with real-time playback, user playlists, and admin panel.",
-      category: "Full Stack",
-      gradient: "from-orange-500 to-red-500",
-      stack: ["React", "Node.js", "MongoDB"],
+        "Modern audio streaming platform with real-time playback, user playlists, and an admin panel.",
+      tools: ["React", "Node.js", "MongoDB"],
       image: "/projects/audio.jpg",
       link: "https://react-audiostreamapp-1.onrender.com",
     },
     {
       title: "Simple Blog Site",
+      date: "Mon, 09 September 2025",
       description:
-        "Clean and responsive blog platform with markdown support and authentication.",
-      category: "Full Stack",
-      gradient: "from-blue-500 to-teal-500",
-      stack: ["Next.js", "PostgreSQL"],
+        "Clean and responsive blog platform with markdown support and user authentication.",
+      tools: ["Next.js", "PostgreSQL"],
       image: "/projects/blog.jpg",
       link: "https://yourwebsite.com/blog",
     },
     {
       title: "Child and Women Protection System",
+      date: "Wed, 02 July 2025",
       description:
-        "A web-based system designed to manage cases related to child and women protection efficiently.",
-      category: "Full Stack",
-      gradient: "from-yellow-500 to-red-500",
-      stack: ["React js","PHP Laravel", "MySQL"],
+        "Web-based system to manage cases related to child and women protection efficiently.",
+      tools: ["React", "Laravel", "MySQL"],
       image: "/projects/child_dashboard.jpg",
       link: "https://perpetrators.et/",
     },
   ];
 
-  const stackIcons = {
-    Python: "🐍",
-    JavaScript: "⚡",
-    React: "⚛️",
-    "Next.js": "▲",
-    "Node.js": "🟢",
-    MongoDB: "🍃",
-    PostgreSQL: "🐘",
-    MySQL: "🐬",
-    Django: "🌿",
-    Laravel: "🐘",
-    NLP: "🧠",
-    "Machine Learning": "🤖",
+  const visibleProjects = useMemo(() => {
+    const items = [];
+    for (let i = 0; i < 3; i += 1) {
+      items.push(projects[(startIndex + i) % projects.length]);
+    }
+    return items;
+  }, [projects, startIndex]);
+
+  const goPrev = () => {
+    setStartIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
+  const goNext = () => {
+    setStartIndex((prev) => (prev + 1) % projects.length);
   };
 
   return (
-    <section id="projects" className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(45,212,191,0.08),transparent_28%),radial-gradient(circle_at_90%_15%,rgba(59,130,246,0.08),transparent_22%)]" />
+    <section id="projects" className="relative overflow-hidden bg-[#07111f] py-24">
       <div className="section-shell">
-        <div className="mb-14 text-center">
+        <div className="mb-10 text-center">
           <p className="section-label">03. Work</p>
-          <h2 className="section-heading mt-4">Selected projects with practical outcomes.</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-300/70 sm:text-base">
-            A handful of projects that combine product thinking, clean interfaces, and practical delivery.
-          </p>
+          <h4 className="section-heading mt-4">Selected projects with practical outcomes.</h4>
         </div>
 
-        {/* PROJECTS GRID */}
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group flex min-h-[540px] flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0b1728] shadow-[0_24px_90px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/25 hover:shadow-[0_28px_100px_rgba(0,0,0,0.35)] lg:col-span-4"
-            >
-              <div className="relative overflow-hidden">
-                {/* Gradient bar */}
-                <div className={`h-1.5 bg-gradient-to-r ${project.gradient}`} />
+        <div className="relative mx-auto max-w-7xl">
+          <button
+            type="button"
+            aria-label="Previous projects"
+            onClick={goPrev}
+            className="absolute left-0 top-1/2 z-20 -translate-x-12 -translate-y-1/2 text-slate-300/70 transition-colors hover:text-slate-100"
+          >
+            <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
 
-                {/* Project image */}
-                  <div className="relative h-48 sm:h-52">
+          <div className="grid gap-6 md:grid-cols-3">
+            {visibleProjects.map((project) => (
+              <article
+                key={project.title}
+                className="group flex min-h-[500px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0b1728] shadow-[0_8px_24px_rgba(0,0,0,0.28)] transition-transform duration-300 hover:-translate-y-1"
+              >
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block h-52 bg-slate-900/20"
+                >
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-contain p-2"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07111f] via-transparent to-transparent opacity-75" />
-                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07111f] to-transparent opacity-90" />
-                  <div className="absolute inset-x-4 top-4 flex items-center justify-between">
-                    <span className="rounded-full border border-white/15 bg-[#07111f]/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.3em] text-slate-100/80 backdrop-blur-md">
-                      {project.category}
-                    </span>
-                    <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-medium text-slate-100/80 backdrop-blur-md">
-                      0{index + 1}
-                    </span>
+                </a>
+                <div className="flex flex-1 flex-col border-t border-white/10 px-5 py-5 text-center">
+                  <h4 className="text-lg font-medium leading-tight text-slate-100">
+                    {project.title}
+                  </h4>
+                  <p className="mt-2 text-xs text-slate-300/70">{project.date}</p>
+
+                  <p className="mt-3 text-xs leading-5 text-slate-200/85">{project.description}</p>
+
+                  <div className="mt-3 flex flex-wrap justify-center gap-2">
+                    {project.tools.map((tool) => (
+                      <span
+                        key={`${project.title}-${tool}`}
+                        className="rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs font-medium text-slate-100"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-auto pt-5">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center rounded-md bg-orange-500 px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-orange-600"
+                    >
+                      View Project
+                    </a>
                   </div>
                 </div>
-              </div>
+              </article>
+            ))}
+          </div>
 
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
-                <div className="mb-3 flex items-start justify-between gap-4">
-                  <h3 className="text-xl font-semibold text-slate-100 transition-colors group-hover:text-teal-300">
-                    {project.title}
-                  </h3>
-                  <svg className="mt-1 h-5 w-5 flex-shrink-0 text-slate-300/40 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8m9 0v9" />
-                  </svg>
-                </div>
-
-                <p className="mb-5 flex-1 text-sm leading-7 text-slate-300/70 sm:text-[0.98rem]">
-                  {project.description}
-                </p>
-
-                <div className="mb-5 flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-slate-300/45">
-                  <span className="h-px flex-1 bg-white/10" />
-                  <span>Selected case study</span>
-                  <span className="h-px flex-1 bg-white/10" />
-                </div>
-
-                {/* STACK */}
-                <div className="mb-6 flex flex-wrap gap-2">
-                  {project.stack.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200/80 transition-colors group-hover:border-teal-400/25 group-hover:bg-teal-400/10 group-hover:text-slate-100"
-                    >
-                      <span>{stackIcons[tech] || "•"}</span>
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/10 pt-5">
-                  <span className="text-xs uppercase tracking-[0.3em] text-slate-300/45">
-                    Selected work
-                  </span>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition-all hover:border-teal-400/30 hover:bg-teal-400/10 hover:text-teal-200"
-                  >
-                    <span>View Project</span>
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8m9 0v9" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
+          <button
+            type="button"
+            aria-label="Next projects"
+            onClick={goNext}
+            className="absolute right-0 top-1/2 z-20 translate-x-12 -translate-y-1/2 text-slate-300/70 transition-colors hover:text-slate-100"
+          >
+            <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
+
       </div>
     </section>
   );

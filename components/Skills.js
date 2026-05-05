@@ -8,6 +8,7 @@ export default function Skills() {
     { name: 'HTML5/CSS3', level: 95 },
     { name: 'Laravel', level: 78 },
     { name: 'Machine Learning', level: 80 },
+    { name: 'Prompt Engineering', level: 76 },
     { name: 'Natural Language Processing', level: 75 }
   ];
 
@@ -19,7 +20,7 @@ export default function Skills() {
 
   const frameworks = [
     'Next.js', 'React', 'Express.js', 'Django', 'ASP.NET Core MVC', 'Tailwind CSS',
-    'TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy'
+    'TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'n8n'
   ];
 
   return (
@@ -32,7 +33,7 @@ export default function Skills() {
         
         {/* Programming Languages */}
         <div className="mx-auto mb-12 max-w-4xl">
-          <h3 className="mb-8 text-center text-lg font-medium uppercase tracking-[0.25em] text-slate-300/60">Programming Languages</h3>
+          <h4 className="mb-8 text-center text-sm font-medium uppercase tracking-[0.25em] text-slate-300/60">Programming Languages</h4>
           <div className="grid md:grid-cols-2 gap-5">
             {technicalSkills.map((skill, index) => (
               <div key={index} className="h-full rounded-2xl border border-white/10 bg-[#0b1728] p-5">
@@ -53,14 +54,14 @@ export default function Skills() {
 
         {/* Databases */}
         <div className="mx-auto mb-12 max-w-4xl">
-          <h3 className="mb-8 text-center text-lg font-medium uppercase tracking-[0.25em] text-slate-300/60">Databases</h3>
+          <h4 className="mb-8 text-center text-sm font-medium uppercase tracking-[0.25em] text-slate-300/60">Databases</h4>
           <div className="grid md:grid-cols-3 gap-5">
             {databases.map((db, index) => (
               <div key={index} className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-[#0b1728] p-5 text-center">
                 <div>
-                  <h4 className="mb-3 text-lg font-semibold text-slate-100">{db.name}</h4>
+                  <h4 className="mb-3 text-base font-semibold text-slate-100">{db.name}</h4>
                   <div className="flex justify-center mb-3">
-                    <span className="text-3xl text-teal-300">{db.level}%</span>
+                    <span className="text-xl text-sky-300">{db.level}%</span>
                   </div>
                 </div>
                 <div className="h-2 rounded-full bg-white/8 overflow-hidden">
@@ -76,12 +77,12 @@ export default function Skills() {
 
         {/* Frameworks & Tools */}
         <div className="mx-auto max-w-4xl">
-          <h3 className="mb-8 text-center text-lg font-medium uppercase tracking-[0.25em] text-slate-300/60">Frameworks & Tools</h3>
+          <h4 className="mb-8 text-center text-sm font-medium uppercase tracking-[0.25em] text-slate-300/60">Frameworks & Tools</h4>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {frameworks.map((framework, index) => (
               <div 
                 key={index}
-                className="group flex h-16 items-center justify-center rounded-xl border border-white/10 bg-[#0b1728] p-3 text-center transition-all duration-300 hover:border-teal-400/25 hover:bg-[#0f1d33]"
+                className="group flex h-16 items-center justify-center rounded-xl border border-white/10 bg-[#0b1728] p-3 text-center transition-all duration-300 hover:border-sky-400/25 hover:bg-[#0f1d33]"
               >
                 <div className="text-sm font-medium text-slate-300/70 transition-colors group-hover:text-slate-100">
                   {framework}

@@ -18,7 +18,7 @@ export default function Hero() {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(circle at top left, rgba(45,212,191,0.14) 0%, transparent 34%), radial-gradient(circle at 80% 20%, rgba(96,165,250,0.08) 0%, transparent 24%)",
+            "radial-gradient(circle at top left, rgba(96,165,250,0.14) 0%, transparent 34%), radial-gradient(circle at 80% 20%, rgba(148,163,184,0.08) 0%, transparent 24%)",
         }}
       />
 
@@ -26,20 +26,23 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="max-w-4xl">
             <p className="section-label mb-5">Hi, my name is</p>
-            <h1 className="text-4xl font-semibold tracking-tight text-slate-100 sm:text-5xl lg:text-6xl">
+            <h3 className="text-3xl font-semibold tracking-tight text-slate-100 sm:text-4xl lg:text-5xl">
               Aklilu Abera.
-            </h1>
-            <h2 className="mt-4 max-w-none text-3xl font-semibold tracking-tight text-slate-400 sm:text-4xl lg:text-5xl lg:whitespace-nowrap">
+            </h3>
+            <h4 className="mt-4 max-w-none text-2xl font-semibold tracking-tight text-slate-400 sm:text-3xl lg:text-4xl lg:whitespace-nowrap">
               I build things for the web.
-            </h2>
+            </h4>
             <p className="mt-8 max-w-2xl text-base leading-8 text-slate-300/75 sm:text-lg">
               I'm a software engineer focused on building clear, reliable digital experiences. I work across frontend, backend, and AI to turn practical ideas into polished products.
+            </p>
+            <p className="mt-4 max-w-2xl text-sm uppercase tracking-[0.28em] text-slate-300/50">
+              Full-stack developer, AI Automation builder, and Udemy-certified Prompt Engineer.
             </p>
 
             <div className="mt-12 flex flex-col gap-6 sm:flex-row sm:items-center">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center rounded-md border border-teal-400/60 bg-transparent px-7 py-3 text-sm font-medium text-teal-200 transition-colors hover:border-teal-300 hover:bg-teal-400/10"
+                className="inline-flex items-center justify-center rounded-md border border-sky-400/60 bg-transparent px-7 py-3 text-sm font-medium text-sky-200 transition-colors hover:border-sky-300 hover:bg-sky-400/10"
               >
                 Check out my work
               </a>
@@ -57,7 +60,7 @@ export default function Hero() {
                   key={stat.label}
                   className="rounded-xl border border-white/8 bg-white/3 px-5 py-4 backdrop-blur-sm"
                 >
-                  <div className="font-mono text-2xl text-teal-300">{stat.number}</div>
+                  <div className="font-mono text-lg text-sky-300">{stat.number}</div>
                   <div className="mt-1 text-sm text-slate-300/70">{stat.label}</div>
                 </div>
               ))}
@@ -65,9 +68,9 @@ export default function Hero() {
           </div>
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-teal-400/20 via-cyan-400/10 to-transparent blur-2xl" />
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sky-400/20 via-cyan-400/10 to-transparent blur-2xl" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b1728] p-4 shadow-[0_28px_100px_rgba(0,0,0,0.38)]">
-              <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-teal-300 via-cyan-300 to-blue-400" />
+              <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#07111f]">
                 <Image
                   src="/projects/profile.png"
@@ -85,7 +88,7 @@ export default function Hero() {
                   <p className="text-xs uppercase tracking-[0.35em] text-slate-300/45">Profile</p>
                   <p className="mt-1 text-lg font-semibold text-slate-100">Aklilu Abera</p>
                 </div>
-                <div className="rounded-full border border-teal-400/25 bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-200">
+                <div className="rounded-full border border-sky-400/25 bg-sky-400/10 px-3 py-1 text-xs font-medium text-sky-200">
                   Available for new work
                 </div>
               </div>

@@ -19,10 +19,10 @@ export default function About() {
       technologies: ['MongoDB', 'PostgreSQL', 'MySQL']
     },
     { 
-      name: 'AI & Machine Learning', 
+      name: 'AI Automation & Prompt Engineering', 
       icon: '🤖',
-      description: 'Intelligent systems and data analysis with Python and ML frameworks',
-      technologies: ['Python', 'TensorFlow', 'Scikit-learn', 'NLP']
+      description: 'Automation-focused intelligent systems for workflows, analysis, productivity, and prompt design',
+      technologies: ['Python', 'TensorFlow', 'Scikit-learn', 'NLP', 'Automation', 'Prompt Engineering', 'n8n']
     }
   ];
 
@@ -31,18 +31,21 @@ export default function About() {
       <div className="section-shell">
         <div className="mb-14 text-center">
           <p className="section-label">01. About</p>
-          <h2 className="section-heading mt-4">Built with care, shipped with clarity.</h2>
+          <h3 className="section-heading mt-4">Built with care, shipped with clarity.</h3>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
           <div className="h-full rounded-3xl border border-white/10 bg-white/5 p-7 shadow-[0_20px_80px_rgba(0,0,0,0.22)] backdrop-blur-sm sm:p-8">
-            <h3 className="text-2xl font-semibold text-slate-100">My Journey</h3>
+            <h3 className="text-lg font-semibold text-slate-100">My Journey</h3>
             <div className="mt-6 space-y-5 text-slate-300/75 leading-8">
               <p>
-                I’m an AI and full-stack software engineer who enjoys making complex ideas feel simple and dependable for the people using them.
+                I’m a full-stack software engineer and AI Automation builder who enjoys making complex ideas feel simple and dependable for the people using them.
               </p>
               <p>
-                My work spans frontend interfaces, backend systems, and AI-enabled features, so I can shape a product from the first sketch to the final deployment.
+                I’m also a Udemy-certified Prompt Engineer, and I use that skill to design smarter prompts and automation flows that improve how systems respond and work.
+              </p>
+              <p>
+                My work spans frontend interfaces, backend systems, and AI automation features, so I can shape a product from the first sketch to the final deployment.
               </p>
               <p>
                 I care about structure, readability, and polish. The result should feel calm, useful, and easy to trust.
@@ -50,16 +53,16 @@ export default function About() {
             </div>
 
             <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-teal-400/15 bg-teal-400/5 p-3 text-center">
-                <div className="font-mono text-2xl text-teal-300">6+</div>
+              <div className="rounded-2xl border border-sky-400/15 bg-sky-400/5 p-3 text-center">
+                <div className="font-mono text-lg text-sky-300">6+</div>
                 <div className="mt-1 text-sm text-slate-300/70">Projects</div>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/4 p-3 text-center">
-                <div className="font-mono text-2xl text-slate-100">10+</div>
+                <div className="font-mono text-lg text-slate-100">10+</div>
                 <div className="mt-1 text-sm text-slate-300/70">Technologies</div>
               </div>
-              <div className="rounded-2xl border border-teal-400/15 bg-teal-400/5 p-3 text-center">
-                <div className="font-mono text-2xl text-teal-300">Full</div>
+              <div className="rounded-2xl border border-sky-400/15 bg-sky-400/5 p-3 text-center">
+                <div className="font-mono text-lg text-sky-300">Full</div>
                 <div className="mt-1 text-sm text-slate-300/70">Stack</div>
               </div>
             </div>
@@ -69,14 +72,14 @@ export default function About() {
             {expertiseAreas.map((area, index) => (
               <div 
                 key={index} 
-                className="group flex h-full flex-col rounded-2xl border border-white/10 bg-[#0b1728] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:bg-[#0f1d33]"
+                className="group flex h-full flex-col rounded-2xl border border-white/10 bg-[#0b1728] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-[#0f1d33]"
               >
                 <div className="flex h-full flex-col">
-                  <div className="mb-3 flex min-h-[60px] items-start space-x-3">
-                    <div className="flex-shrink-0 text-3xl transition-transform duration-300 group-hover:scale-110">
+                    <div className="mb-3 flex min-h-[60px] items-start space-x-3">
+                    <div className="flex-shrink-0 text-2xl transition-transform duration-300 group-hover:scale-110">
                       {area.icon}
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-100">{area.name}</h3>
+                    <h4 className="text-xl font-semibold text-slate-100">{area.name}</h4>
                   </div>
 
                   <p className="mb-4 flex-1 text-sm leading-relaxed text-slate-300/70">
