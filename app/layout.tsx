@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="antialiased">
+      <body className="antialiased bg-[#07111f] text-slate-100">
         {children}
           {/* IntelliChat AI Assistant */}
        <script src="https://intellichat.io/api/widget.js?id=37191919"></script>

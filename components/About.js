@@ -9,8 +9,8 @@ export default function About() {
     { 
       name: 'Backend Development', 
       icon: '⚙️',
-      description: 'Robust server-side solutions with Node.js, Express, and Python',
-      technologies: ['Node.js', 'Express', 'Python', 'Django', 'PHP']
+      description: 'Robust server-side solutions with Node.js, Express, Python, and ASP.NET Core MVC',
+      technologies: ['Node.js', 'Express', 'Python', 'Django', 'PHP', 'ASP.NET Core MVC']
     },
     { 
       name: 'Database Management', 
@@ -27,88 +27,75 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-foreground">
-          About <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Me</span>
-        </h2>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Content Card */}
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 h-full">
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-6">My Journey</h3>
-                  <p className="text-foreground/60 mb-6 leading-relaxed">
-                    I'm an AI and Full-Stack Software Engineer with expertise in both web development and artificial intelligence. 
-                    My passion lies in creating innovative solutions that bridge the gap between cutting-edge AI technologies 
-                    and practical, user-friendly applications.
-                  </p>
-                  <p className="text-foreground/60 mb-6 leading-relaxed">
-                    With a diverse skill set spanning from frontend development with React and Next.js to backend systems with 
-                    Node.js, Python, and PHP, I build comprehensive full-stack solutions. My AI/ML expertise allows me to 
-                    integrate intelligent features into web applications.
-                  </p>
-                  <p className="text-foreground/60 mb-8 leading-relaxed">
-                    I have experience working with various databases including MongoDB, PostgreSQL, and MySQL, 
-                    ensuring optimal data management for different project requirements.
-                  </p>
-                </div>
-                
-                {/* Stats Cards */}
-                <div className="grid grid-cols-3 gap-4 mt-auto">
-                  <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-4 text-center border border-purple-100">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">6+</div>
-                    <div className="text-foreground/60 text-sm">Projects</div>
+    <section id="about" className="py-24">
+      <div className="section-shell">
+        <div className="mb-14 text-center">
+          <p className="section-label">01. About</p>
+          <h2 className="section-heading mt-4">Built with care, shipped with clarity.</h2>
+        </div>
+
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.22)] backdrop-blur-sm sm:p-10">
+            <h3 className="text-2xl font-semibold text-slate-100">My Journey</h3>
+            <div className="mt-6 space-y-5 text-slate-300/75 leading-8">
+              <p>
+                I’m an AI and full-stack software engineer who enjoys making complex ideas feel simple and dependable for the people using them.
+              </p>
+              <p>
+                My work spans frontend interfaces, backend systems, and AI-enabled features, so I can shape a product from the first sketch to the final deployment.
+              </p>
+              <p>
+                I care about structure, readability, and polish. The result should feel calm, useful, and easy to trust.
+              </p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-teal-400/15 bg-teal-400/5 p-4 text-center">
+                <div className="font-mono text-2xl text-teal-300">6+</div>
+                <div className="mt-1 text-sm text-slate-300/70">Projects</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/4 p-4 text-center">
+                <div className="font-mono text-2xl text-slate-100">10+</div>
+                <div className="mt-1 text-sm text-slate-300/70">Technologies</div>
+              </div>
+              <div className="rounded-2xl border border-teal-400/15 bg-teal-400/5 p-4 text-center">
+                <div className="font-mono text-2xl text-teal-300">Full</div>
+                <div className="mt-1 text-sm text-slate-300/70">Stack</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            {expertiseAreas.map((area, index) => (
+              <div 
+                key={index} 
+                className="group h-full rounded-2xl border border-white/10 bg-[#0b1728] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/30 hover:bg-[#0f1d33]"
+              >
+                <div className="flex h-full flex-col">
+                  <div className="mb-4 flex items-center space-x-4">
+                    <div className="flex-shrink-0 text-3xl transition-transform duration-300 group-hover:scale-110">
+                      {area.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-100">{area.name}</h3>
                   </div>
-                  <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-4 text-center border border-green-100">
-                    <div className="text-2xl font-bold text-green-600 mb-1">10+</div>
-                    <div className="text-foreground/60 text-sm">Technologies</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 text-center border border-orange-100">
-                    <div className="text-2xl font-bold text-orange-600 mb-1">Full</div>
-                    <div className="text-foreground/60 text-sm">Stack</div>
+
+                  <p className="mb-4 flex-1 text-sm leading-relaxed text-slate-300/70">
+                    {area.description}
+                  </p>
+
+                  <div className="mt-auto flex flex-wrap gap-2 border-t border-white/10 pt-4">
+                    {area.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex}
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200/80"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Expertise Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {expertiseAreas.map((area, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 group h-full transform hover:-translate-y-1"
-                >
-                  <div className="flex flex-col h-full">
-                    {/* Icon and Header */}
-                    <div className="flex items-center space-x-4 mb-4">
-                      <div className="text-3xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        {area.icon}
-                      </div>
-                      <h3 className="text-xl font-semibold text-foreground">{area.name}</h3>
-                    </div>
-                    
-                    {/* Description */}
-                    <p className="text-foreground/60 mb-4 text-sm leading-relaxed flex-1">
-                      {area.description}
-                    </p>
-                    
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">
-                      {area.technologies.map((tech, techIndex) => (
-                        <span 
-                          key={techIndex}
-                          className="px-3 py-1 bg-gradient-to-r from-purple-50 to-blue-50 text-foreground/70 rounded-full text-xs font-medium border border-purple-100"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>

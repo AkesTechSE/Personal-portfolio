@@ -72,72 +72,101 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-20">
-          Featured{" "}
-          <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Projects
-          </span>
-        </h2>
+    <section id="projects" className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(45,212,191,0.08),transparent_28%),radial-gradient(circle_at_90%_15%,rgba(59,130,246,0.08),transparent_22%)]" />
+      <div className="section-shell">
+        <div className="mb-14 text-center">
+          <p className="section-label">03. Work</p>
+          <h2 className="section-heading mt-4">Selected projects with practical outcomes.</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-300/70 sm:text-base">
+            A handful of projects that combine product thinking, clean interfaces, and practical delivery.
+          </p>
+        </div>
 
         {/* PROJECTS GRID */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all flex flex-col"
+              className={`group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0b1728] shadow-[0_24px_90px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/25 hover:shadow-[0_28px_100px_rgba(0,0,0,0.35)] ${
+                index === 0 ? 'lg:col-span-7' : 'lg:col-span-5'
+              }`}
             >
-              {/* Gradient bar */}
-              <div className={`h-2 bg-gradient-to-r ${project.gradient}`} />
+              <div className="relative overflow-hidden">
+                {/* Gradient bar */}
+                <div className={`h-1.5 bg-gradient-to-r ${project.gradient}`} />
 
-              {/* Project image */}
-              <div className="w-full h-48 relative">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
+                {/* Project image */}
+                  <div className={`relative ${index === 0 ? 'h-72 sm:h-80' : 'h-56 sm:h-60'}`}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07111f] via-transparent to-transparent opacity-75" />
+                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07111f] to-transparent opacity-90" />
+                  <div className="absolute inset-x-4 top-4 flex items-center justify-between">
+                    <span className="rounded-full border border-white/15 bg-[#07111f]/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.3em] text-slate-100/80 backdrop-blur-md">
+                      {project.category}
+                    </span>
+                    <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-medium text-slate-100/80 backdrop-blur-md">
+                      0{index + 1}
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-6 flex flex-col flex-1">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-semibold hover:text-purple-600 transition">
+              <div className="flex flex-1 flex-col p-6 sm:p-7">
+                <div className="mb-3 flex items-start justify-between gap-4">
+                  <h3 className="text-2xl font-semibold text-slate-100 transition-colors group-hover:text-teal-300">
                     {project.title}
                   </h3>
-                  <span className="px-2 py-1 bg-gray-100 text-xs rounded">
-                    {project.category}
-                  </span>
+                  <svg className="mt-1 h-5 w-5 flex-shrink-0 text-slate-300/40 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8m9 0v9" />
+                  </svg>
                 </div>
 
-                <p className="text-gray-600 text-sm mb-4 flex-1">
+                <p className="mb-5 flex-1 text-sm leading-7 text-slate-300/70 sm:text-[0.98rem]">
                   {project.description}
                 </p>
 
+                <div className="mb-5 flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-slate-300/45">
+                  <span className="h-px flex-1 bg-white/10" />
+                  <span>{index === 0 ? 'Featured case study' : 'Selected case study'}</span>
+                  <span className="h-px flex-1 bg-white/10" />
+                </div>
+
                 {/* STACK */}
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="mb-6 flex flex-wrap gap-2">
                   {project.stack.map((tech, i) => (
                     <span
                       key={i}
-                      className="flex items-center gap-1 px-2 py-1 bg-gray-100 text-xs rounded"
+                      className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200/80 transition-colors group-hover:border-teal-400/25 group-hover:bg-teal-400/10 group-hover:text-slate-100"
                     >
-                      <span>{stackIcons[tech]}</span>
+                      <span>{stackIcons[tech] || "•"}</span>
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* LINK BUTTON */}
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto w-full py-2 rounded-lg bg-gray-100 hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:text-white transition font-medium text-sm text-center"
-                >
-                  View Project
-                </a>
+                <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/10 pt-5">
+                  <span className="text-xs uppercase tracking-[0.3em] text-slate-300/45">
+                    {index === 0 ? 'Featured work' : 'Selected work'}
+                  </span>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition-all hover:border-teal-400/30 hover:bg-teal-400/10 hover:text-teal-200"
+                  >
+                    <span>View Project</span>
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H8m9 0v9" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           ))}

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #07111f;
+  --foreground: #d7e0f2;
 }
 
 @theme inline {
@@ -16,12 +16,28 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background-image:
+    radial-gradient(circle at top, rgba(20, 184, 166, 0.12), transparent 32%),
+    linear-gradient(180deg, #08111f 0%, #07111f 48%, #06101d 100%);
+  min-height: 100vh;
 }
 
 /* Custom utilities and animations */
 @layer utilities {
   .animate-marquee {
     animation: marquee 25s linear infinite;
+  }
+
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.35em] text-teal-300/80;
+  }
+
+  .section-heading {
+    @apply text-3xl font-semibold text-slate-100 sm:text-4xl lg:text-5xl;
   }
 }
 
@@ -35,21 +51,21 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #0b1626;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8b5cf6;
+  background: #2dd4bf;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: #14b8a6;
 }
 
 /* Smooth transitions */
 * {
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Ensure images and other non-color elements don't transition */

@@ -45,27 +45,27 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="container mx-auto px-6 py-8">
+    <footer className="border-t border-white/10 bg-[#06101c]">
+      <div className="section-shell py-10">
         <div className="grid md:grid-cols-3 gap-6">
           {/* About Section */}
           <div>
-            <h3 className="text-lg font-bold mb-3 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <h3 className="mb-3 text-lg font-bold text-teal-300">
               About Me
             </h3>
-            <p className="text-foreground/60 text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed text-slate-300/70">
               Passionate Full-Stack & AI Engineer with expertise in JavaScript, React, Python, and machine learning.
             </p>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-3 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <h3 className="mb-3 text-lg font-bold text-teal-300">
               Contact Info
             </h3>
-            <div className="space-y-2 text-foreground/60 text-sm">
+            <div className="space-y-2 text-sm text-slate-300/70">
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <a href="mailto:akililuabera44@gmail.com" className="hover:text-foreground transition-colors">
@@ -73,7 +73,7 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <a href="tel:+251909630346" className="hover:text-foreground transition-colors">
@@ -81,7 +81,7 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -91,7 +91,7 @@ export default function Footer() {
           </div>
 {/* Social Links */}
 <div>
-  <h3 className="text-lg font-bold mb-3 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+  <h3 className="mb-3 text-lg font-bold text-teal-300">
     Connect With Me
   </h3>
   <div className="grid grid-cols-2 gap-3">
@@ -101,12 +101,12 @@ export default function Footer() {
         href={social.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center space-x-2 p-2 bg-white rounded-lg hover:bg-gray-100 transition-all duration-300 group border border-gray-200 text-sm"
+        className="group flex items-center space-x-2 rounded-lg border border-white/10 bg-white/5 p-2 text-sm transition-all duration-300 hover:border-teal-400/25 hover:bg-teal-400/10"
       >
-        <div className="text-purple-500 group-hover:text-purple-600 transition-colors">
+        <div className="text-teal-300 transition-colors group-hover:text-teal-200">
           {social.icon}
         </div>
-        <span className="text-foreground/60 group-hover:text-foreground transition-colors">
+        <span className="text-slate-300/70 transition-colors group-hover:text-slate-100">
           {social.name}
         </span>
       </a>
@@ -116,8 +116,8 @@ export default function Footer() {
 </div>
 
 {/* Copyright */}
-<div className="border-t border-gray-200 mt-6 pt-6 text-center">
-  <p className="text-foreground/60 text-sm">
+<div className="mt-8 border-t border-white/10 pt-6 text-center">
+  <p className="text-sm text-slate-300/60">
     © 2024 - {new Date().getFullYear()} Aklilu Abera. All rights reserved.
   </p>
 </div>

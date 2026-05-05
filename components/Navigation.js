@@ -27,41 +27,53 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
+  const navItems = [
+    { label: "About", href: "#about", section: "about", number: "01" },
+    { label: "Skills", href: "#skills", section: "skills", number: "02" },
+    { label: "Work", href: "#projects", section: "projects", number: "03" },
+    { label: "Contact", href: "#contact", section: "contact", number: "04" },
+  ];
 
   return (
-    <nav className="fixed w-full z-50 bg-background/80 backdrop-blur-sm border-b border-gray-200">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07111f]/85 backdrop-blur-xl">
+      <div className="section-shell flex items-center justify-between py-4">
         <a
-          href="#"
-          className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
+          href="#home"
+          className="flex items-center gap-3 text-sm font-semibold tracking-[0.25em] text-slate-100"
         >
-          Aklilu Abera
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-teal-400/70 text-teal-300 shadow-[0_0_0_1px_rgba(45,212,191,0.12)]">
+            A
+          </span>
+          <span className="hidden sm:block">AKLILU ABERA</span>
         </a>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-4">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className={`transition-all duration-300 ${
-                  activeSection === item.toLowerCase()
-                    ? "text-purple-600 font-medium"
-                    : "text-foreground/60 hover:text-foreground"
+                key={item.label}
+                href={item.href}
+                className={`text-sm tracking-wide transition-colors duration-300 ${
+                  activeSection === item.section
+                    ? "text-teal-300"
+                    : "text-slate-300/70 hover:text-slate-100"
                 }`}
               >
-                {item}
+                <span className="mr-2 font-mono text-teal-300/80">{item.number}.</span>
+                {item.label}
               </a>
             ))}
+            <a
+              href="#contact"
+              className="rounded-md border border-teal-400/60 px-4 py-2 text-sm font-medium text-teal-200 transition-colors hover:border-teal-300 hover:bg-teal-400/10"
+            >
+              Resume
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground/60 focus:outline-none"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <button className="md:hidden text-slate-300 focus:outline-none" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg
               className="w-6 h-6"
               fill="none"
@@ -90,21 +102,29 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background py-4 px-6 border-b border-gray-200">
+        <div className="md:hidden border-b border-white/10 bg-[#07111f] px-6 py-4">
           {navItems.map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className={`block py-2 transition-all duration-300 ${
-                activeSection === item.toLowerCase()
-                  ? "text-purple-600 font-medium"
-                  : "text-foreground/60 hover:text-foreground"
+              key={item.label}
+              href={item.href}
+              className={`block py-2 text-sm tracking-wide transition-colors duration-300 ${
+                activeSection === item.section
+                  ? "text-teal-300"
+                  : "text-slate-300/70 hover:text-slate-100"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
-              {item}
+              <span className="mr-2 font-mono text-teal-300/80">{item.number}.</span>
+              {item.label}
             </a>
           ))}
+          <a
+            href="#contact"
+            className="mt-3 inline-flex rounded-md border border-teal-400/60 px-4 py-2 text-sm font-medium text-teal-200"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Resume
+          </a>
         </div>
       )}
     </nav>

@@ -4,142 +4,90 @@ import Image from "next/image";
 
 export default function Hero() {
   const quickStats = [
-    { number: "6+", label: "Projects" },
-    { number: "10+", label: "Technologies" },
-    { number: "Full", label: "Stack" },
-    { number: "AI/ML", label: "Expertise" },
+    { number: "6+", label: "Projects shipped" },
+    { number: "4+", label: "Years building" },
+    { number: "10+", label: "Core tools" },
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-6 items-center">
-          {/* Left Text Section */}
-          <div className="text-left">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-              Aklilu{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Abera
-              </span>
-            </h2>
-            <h2 className="text-xl md:text-2xl text-foreground/60 mb-8">
-              Full-Stack & AI Engineer
-            </h2>
-            <p className="text-lg text-foreground/60 mb-10 leading-relaxed">
-              Building intelligent web solutions with JavaScript, React, Python, and cutting-edge AI technologies. Full-stack development meets machine learning innovation.
-            </p>
+    <section
+      id="home"
+      className="relative overflow-hidden pt-32 pb-20 sm:pt-36 lg:min-h-screen lg:pt-40"
+    >
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            'radial-gradient(circle at top left, rgba(45,212,191,0.14) 0%, transparent 34%), radial-gradient(circle at 80% 20%, rgba(96,165,250,0.08) 0%, transparent 24%)',
+        }}
+      />
+      <div className="section-shell">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="max-w-4xl">
+          <p className="section-label mb-5">Hi, my name is</p>
+          <h1 className="text-5xl font-semibold tracking-tight text-slate-100 sm:text-6xl lg:text-7xl">
+            Aklilu Abera.
+          </h1>
+          <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-400 sm:text-5xl lg:text-6xl">
+            I build things for the web.
+          </h2>
+          <p className="mt-8 max-w-2xl text-base leading-8 text-slate-300/75 sm:text-lg">
+            I’m a software engineer focused on building clear, reliable digital experiences. I work across frontend, backend, and AI to turn practical ideas into polished products.
+          </p>
 
-            {/* Quick Stats */}
-            <div className="flex gap-8 mb-12">
-              {quickStats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-purple-600">{stat.number}</div>
-                  <div className="text-foreground/60 text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#projects"
-                className="px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-medium hover:from-purple-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 text-center"
-              >
-                View My Projects
-              </a>
-              <a
-                href="#contact"
-                className="px-8 py-3 border border-gray-300 text-foreground/80 rounded-lg font-medium hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 text-center"
-              >
-                Get In Touch
-              </a>
-            </div>
+          <div className="mt-12 flex flex-col gap-6 sm:flex-row sm:items-center">
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center rounded-md border border-teal-400/60 bg-transparent px-7 py-3 text-sm font-medium text-teal-200 transition-colors hover:border-teal-300 hover:bg-teal-400/10"
+            >
+              Check out my work
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center text-sm font-medium text-slate-300/70 transition-colors hover:text-slate-100"
+            >
+              Let’s talk about your project
+            </a>
           </div>
 
-          {/* Right Image/Card Section */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                
-                {/* Profile Image */}
-                <div className="w-79 h-72 md:w-80 md:h-80 rounded-xl overflow-hidden border-4 border-white shadow-lg mb-4 relative">
-                  <Image
-                    src="/projects/profile.png"
-                    alt="Aklilu Abera"
-                    fill
-                    className="object-cover"
-                    unoptimized
-                  />
-                </div>
+          <div className="mt-16 grid max-w-2xl grid-cols-1 gap-4 border-t border-white/10 pt-6 sm:grid-cols-3">
+            {quickStats.map((stat) => (
+              <div key={stat.label} className="rounded-xl border border-white/8 bg-white/3 px-5 py-4 backdrop-blur-sm">
+                <div className="font-mono text-2xl text-teal-300">{stat.number}</div>
+                <div className="mt-1 text-sm text-slate-300/70">{stat.label}</div>
+              </div>
+            ))}
+          </div>
 
-                {/* Card Content */}
-                <div className="text-center">
-                  <h3 className="text-xl font-bold text-foreground mb-2">Aklilu Abera</h3>
-                  <p className="text-foreground/60 text-sm mb-4">Full-Stack & AI Engineer</p>
+          </div>
 
-                  {/* Tech Stack Badges */}
-                  <div className="flex justify-center gap-2 mb-4">
-                    <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">JavaScript</span>
-                    <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">React</span>
-                    <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Python</span>
-                  </div>
-
-                  {/* Availability Status */}
-                  <div className="flex items-center justify-center gap-2 text-sm text-foreground/60">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span>Available for new projects</span>
-                  </div>
-                </div>
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-teal-400/20 via-cyan-400/10 to-transparent blur-2xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b1728] p-4 shadow-[0_28px_100px_rgba(0,0,0,0.38)]">
+              <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-teal-300 via-cyan-300 to-blue-400" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#07111f]">
+                <Image
+                  src="/projects/profile.png"
+                  alt="Aklilu Abera portrait"
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07111f] via-transparent to-transparent opacity-30" />
               </div>
 
-              {/* Floating Tech Badges */}
-              <div className="absolute -top-4 -left-4 bg-white rounded-full p-3 shadow-lg border border-gray-200">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">JS</span>
+              <div className="mt-4 flex items-center justify-between gap-4 px-1 pb-1">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.35em] text-slate-300/45">Profile</p>
+                  <p className="mt-1 text-lg font-semibold text-slate-100">Aklilu Abera</p>
                 </div>
-              </div>
-
-              <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg border border-gray-200">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">AI</span>
-                </div>
-              </div>
-
-              <div className="absolute top-1/2 -left-6 bg-white rounded-full p-2 shadow-lg border border-gray-200">
-                <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">Py</span>
+                <div className="rounded-full border border-teal-400/25 bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-200">
+                  Available for new work
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Tech Scroll */}
-        <div className="mt-16">
-          <div className="flex overflow-hidden">
-            <div className="animate-marquee whitespace-nowrap">
-              {[
-                "JavaScript",
-                "React",
-                "Next.js",
-                "Node.js",
-                "Python",
-                "Django",
-                "PHP",
-                "MongoDB",
-                "PostgreSQL",
-                "MySQL",
-                "TensorFlow",
-                "HTML5",
-                "CSS3",
-              ].map((tech, index) => (
-                <span key={index} className="mx-4 text-foreground/60 text-lg">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
