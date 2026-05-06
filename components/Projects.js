@@ -31,7 +31,7 @@ export default function Projects() {
       date: "Tue, 18 March 2025",
       description:
         "Trading community platform built for market discussions, shared insights, watchlists, and collaboration between traders.",
-      tools: ["Next.js", "React", "Node.js", "MongoDB"],
+      tools: ["Next.js", "ASP.NET Core MVC", "PostgreSQL"],
       image: null,
       link: "#contact",
     },
