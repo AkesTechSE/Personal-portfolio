@@ -22,7 +22,7 @@ export async function POST(request) {
       subject: 'Thank you for contacting Aklilu Abera',
       html: `
         <h3>Hi ${clientName},</h3>
-        <p>Thank you for reaching out! I've received your message and will get back to you within 24 hours.</p>
+        <p>Thank you for reaching out! I've received your message and will get back to you As soon as possible.</p>
         <p>Looking forward to connecting with you!</p>
         <br>
         <p>Best regards,</p>

@@ -95,7 +95,7 @@ export async function POST(request) {
                 <div class="content">
                     <p>Hi <strong>${name}</strong>,</p>
                     
-                    <p>Thank you for contacting me through my portfolio website. I've received your message and will get back to you within 24 hours.</p>
+                    <p>Thank you for contacting me through my portfolio website. I've received your message and will get back to you As soon as possible.</p>
                     
                     <p><strong>Here's a summary of your inquiry:</strong></p>
                     <ul>

@@ -122,8 +122,7 @@ export default function Contact() {
               {/* Quick Response Note */}
               <div className="mt-8 rounded-2xl border border-sky-400/20 bg-sky-400/8 p-4">
                 <p className="text-sm text-sky-100/85">
-                  <strong>Quick Response:</strong> I typically reply within 24 hours. For urgent matters, 
-                  feel free to call or text me directly.
+                  <strong>Quick Response:</strong> I typically reply within  As soon as possible. Feel free to reach out, and I look forward to connecting with you!
                 </p>
               </div>
             </div>

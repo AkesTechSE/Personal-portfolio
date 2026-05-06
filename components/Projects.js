@@ -27,6 +27,15 @@ export default function Projects() {
       link: "https://react-audiostreamapp-1.onrender.com",
     },
     {
+      title: "TradinHub",
+      date: "Tue, 18 March 2025",
+      description:
+        "Trading community platform built for market discussions, shared insights, watchlists, and collaboration between traders.",
+      tools: ["Next.js", "React", "Node.js", "MongoDB"],
+      image: null,
+      link: "#contact",
+    },
+    {
       title: "Ticket Management System",
       date: "Mon, 09 September 2025",
       description:
@@ -97,20 +106,44 @@ export default function Projects() {
                 key={project.title}
                 className="group flex min-h-[500px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0b1728] shadow-[0_8px_24px_rgba(0,0,0,0.28)] transition-transform duration-300 hover:-translate-y-1"
               >
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative block h-52 bg-slate-900/20"
-                >
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-contain p-2"
-                    unoptimized
-                  />
-                </a>
+                {project.link && project.link.startsWith("http") ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block h-52 bg-slate-900/20"
+                  >
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-contain p-2"
+                        unoptimized
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_60%),linear-gradient(135deg,_rgba(8,15,28,1),_rgba(15,23,42,1))] text-center">
+                        <div>
+                          <div className="text-2xl font-semibold tracking-[0.35em] text-sky-200">TH</div>
+                          <div className="mt-2 text-xs uppercase tracking-[0.3em] text-slate-300/60">
+                            Trading community
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </a>
+                ) : (
+                  <div className="relative block h-52 bg-slate-900/20">
+                    <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_60%),linear-gradient(135deg,_rgba(8,15,28,1),_rgba(15,23,42,1))] text-center">
+                      <div>
+                        <div className="text-2xl font-semibold tracking-[0.35em] text-sky-200">TH</div>
+                        <div className="mt-2 text-xs uppercase tracking-[0.3em] text-slate-300/60">
+                          Trading community
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="flex flex-1 flex-col border-t border-white/10 px-5 py-5 text-center">
                   <h4 className="text-lg font-medium leading-tight text-slate-100">
                     {project.title}
@@ -131,14 +164,23 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-auto pt-5">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-md bg-orange-500 px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-orange-600"
-                    >
-                      View Project
-                    </a>
+                    {project.link && project.link.startsWith("http") ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center rounded-md bg-orange-500 px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-orange-600"
+                      >
+                        View Project
+                      </a>
+                    ) : (
+                      <a
+                        href={project.link}
+                        className="inline-flex items-center rounded-md border border-white/15 bg-white/5 px-4 py-2 text-xs font-medium text-slate-200/80 transition-colors hover:bg-white/10"
+                      >
+                        View Project
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>
