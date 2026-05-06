@@ -65,7 +65,7 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/api/resume"
               className="rounded-md border border-sky-400/60 px-4 py-2 text-sm font-medium text-sky-200 transition-colors hover:border-sky-300 hover:bg-sky-400/10"
             >
               Resume
@@ -119,7 +119,7 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/api/resume"
             className="mt-3 inline-flex rounded-md border border-sky-400/60 px-4 py-2 text-sm font-medium text-sky-200"
             onClick={() => setIsMenuOpen(false)}
           >

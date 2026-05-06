@@ -95,8 +95,8 @@ export default function Contact() {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Contact Information */}
             <div>
-              <h3 className="mb-6 text-2xl font-semibold text-slate-100">Let&apos;s Start a Conversation</h3>
-              <p className="mb-8 text-lg leading-8 text-slate-300/75">
+              <h3 className="mb-6 text-lg font-semibold text-slate-100">Let&apos;s Start a Conversation</h3>
+              <p className="mb-8 text-base leading-7 text-slate-300/75">
                 I'm always interested in new opportunities - whether it's collaborating on exciting projects, 
                 discussing AI technologies, or exploring how we can work together to bring your ideas to life.
               </p>
@@ -159,7 +159,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full rounded-lg border border-white/10 bg-[#07111f] px-4 py-3 text-slate-100 outline-none transition-colors duration-300 placeholder:text-slate-500 focus:border-sky-400/50"
-                      placeholder="your.email@example.com"
+                      placeholder="example@gmail.com"
                     />
                   </div>
                 </div>

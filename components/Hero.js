@@ -47,11 +47,12 @@ export default function Hero() {
                 Check out my work
               </a>
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center text-sm font-medium text-slate-300/70 transition-colors hover:text-slate-100"
+                href="/api/resume"
+                className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/5 px-7 py-3 text-sm font-medium text-slate-200 transition-colors hover:border-white/30 hover:bg-white/10"
               >
-                Let's talk about your project
+                Download Resume
               </a>
+             
             </div>
 
             <div className="mt-16 grid max-w-2xl grid-cols-1 gap-4 border-t border-white/10 pt-6 sm:grid-cols-3">

@@ -1,4 +1,3 @@
-import Script from "next/script";
 import type { Metadata } from "next";
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
@@ -26,8 +25,7 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="antialiased bg-[#07111f] text-slate-100">
         {children}
-          {/* IntelliChat AI Assistant */}
-       <script src="https://intellichat.io/api/widget.js?id=37191919"></script>
+          {/* IntelliChat AI Assistant removed */}
       </body>
     </html>
   );

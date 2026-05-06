@@ -16,15 +16,7 @@ export default function Projects() {
       image: "/projects/spam.jpg",
       link: "https://spam-classifier-cmzr.onrender.com",
     },
-    {
-      title: "Library Management System",
-      date: "Sat, 20 May 2025",
-      description:
-        "Comprehensive library management solution with book tracking, user management, and analytics dashboard.",
-      tools: ["Next.js", "MongoDB", "Express"],
-      image: "/projects/library.jpg",
-      link: "https://yourwebsite.com/library-system",
-    },
+   
     {
       title: "Audio Streaming Site",
       date: "Fri, 14 November 2025",
@@ -35,13 +27,22 @@ export default function Projects() {
       link: "https://react-audiostreamapp-1.onrender.com",
     },
     {
-      title: "Simple Blog Site",
+      title: "Ticket Management System",
       date: "Mon, 09 September 2025",
       description:
-        "Clean and responsive blog platform with markdown support and user authentication.",
-      tools: ["Next.js", "PostgreSQL"],
+        "Built a full-stack online ticket management system with authentication, role-based access control, ticket tracking, status updates, dashboard reporting, and issue categorization.",
+      tools: ["ASP.NET Core MVC",  "SQL Server"],
       image: "/projects/blog.jpg",
-      link: "https://yourwebsite.com/blog",
+      link: "https://yourwebsite.com/ticket-management-system",
+    },
+    {
+      title: "Nexuses International School",
+      date: "Tue, 12 November 2025",
+      description:
+        "Built a school management platform to handle student records, class workflows, and admin operations with a clean and responsive dashboard.",
+      tools: ["Next.js", "ASP.NET Core", "SQL Server", "Bootstrap"],
+      image: "/projects/library.jpg",
+      link: "https://yourwebsite.com/nexuses-international-school",
     },
     {
       title: "Child and Women Protection System",
